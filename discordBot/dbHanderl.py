@@ -17,7 +17,7 @@ class databaseHandler:
         self.con = None
 
     def __enter__(self):
-        self.con = sqlite3.connect('data.db')
+        self.con = sqlite3.connect('savesF\\data.db')
         self.cur = self.con.cursor()
         self.cur.execute('CREATE TABLE IF NOT EXISTS websites (id INTEGER PRIMARY KEY AUTOINCREMENT, url TEXT, image TEXT, score INTEGER, misc TEXT)')
         self.con.commit()
