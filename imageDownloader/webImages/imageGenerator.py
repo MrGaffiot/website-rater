@@ -54,7 +54,7 @@ class URLScreenshotter:
 
 def main():
     # Example usage
-    with open('imageDownloader\\urls.json', 'r', encoding='utf-8') as f:
+    with open('imageDownloader/urls.json', 'r', encoding='utf-8') as f:
         urls = json.load(f)
     
     screenshotter = URLScreenshotter(max_workers=3)
