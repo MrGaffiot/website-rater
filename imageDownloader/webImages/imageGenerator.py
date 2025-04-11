@@ -26,7 +26,7 @@ class URLScreenshotter:
                 page.goto(url, wait_until="networkidle", timeout=30000)
                 
                 # Save screenshot
-                page.screenshot(path=filename)
+                page.screenshot(path='imageDownloader/webImages/'+filename)
                 
                 # Cleanup
                 browser.close()
