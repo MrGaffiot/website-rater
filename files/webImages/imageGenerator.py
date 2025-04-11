@@ -25,7 +25,7 @@ def capture_screenshot(url, output_path='test', full_page=False):
             page.wait_for_timeout(5000)  # 5 second timeout
             
             # Capture screenshot
-            page.screenshot(path='files\\webImages\\' + output_path + '.png', full_page=full_page)
+            page.screenshot(path='files/webImages/' + output_path + '.png', full_page=full_page)
             
             print(f"Screenshot saved to {os.path.abspath(output_path)}")
             
@@ -46,6 +46,6 @@ def threadSaving(urlLen, urls):
         capture_screenshot(urls[i])
 
 if __name__ == "__main__":
-    urls = readJson('files\\urls.json')
+    urls = readJson('files/urls.json')
     urlLength = len(urls)
     
