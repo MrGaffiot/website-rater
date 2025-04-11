@@ -1,5 +1,7 @@
 import discord
 from dbHanderl import databaseHandler
+import packageGenerator.generate as generate
+#await message.channel.send("User added")
 
 class MyClient(discord.Client):
     async def on_ready(self):
@@ -10,7 +12,13 @@ class MyClient(discord.Client):
         if message.author == self.user:
             return
         if message.content.startswith('!'):
-            await message.channel.send("User added")
+            if message.content.startswith('!generate'):
+                try:
+                    generate.makePackage(generate.makePackageInfo(int(message.content.split(' ')[1])))
+                    await message.channel.send("Package generated")
+                    await message.channel.send(file=discord.File('discordBot\\packageGenerator\\package.zip'))
+                except Exception as e:
+                    await message.channel.send(str(e))
 
 intents = discord.Intents.default()
 intents.message_content = True
