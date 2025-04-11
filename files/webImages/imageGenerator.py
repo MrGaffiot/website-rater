@@ -49,3 +49,7 @@ if __name__ == "__main__":
     urls = readJson('files/urls.json')
     urlLength = len(urls)
     
+    for i in range(urlLength):
+        print(urls[i])
+        capture_screenshot(urls[i], output_path=str(i), full_page=True)
+    
