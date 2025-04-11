@@ -8,7 +8,7 @@ from typing import List, Tuple
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 class URLScreenshotter:
-    def __init__(self, max_workers: int = 5):
+    def __init__(self, max_workers: int = 10):
         self.max_workers = max_workers
         
     def capture_url(self, url: str) -> Tuple[str, bool]:
