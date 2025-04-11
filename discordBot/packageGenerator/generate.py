@@ -1,5 +1,5 @@
 import os, json, shutil
-from zipper import create_zip_archive
+from packageGenerator.zipper import create_zip_archive
 
 def makePackageInfo(size: int):
     with open('discordBot\\packageGenerator\\category.json', 'r', encoding='utf-8') as f:
@@ -7,6 +7,14 @@ def makePackageInfo(size: int):
     
     notDone = [i for i in categories if not i['isDone']]
     package = [notDone[i] for i in range(size)]
+    
+    for i in categories:
+        for i in package:
+            if i['url'] == categories[categories.index(i)]['url']:
+                categories[categories.index(i)]["isDone"] = True
+    
+    with open('discordBot\\packageGenerator\\category.json', 'w', encoding='utf-8') as f:
+        json.dump(categories, f, ensure_ascii=False, indent=4)
     
     return package
 
