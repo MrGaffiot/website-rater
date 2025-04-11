@@ -51,5 +51,5 @@ if __name__ == "__main__":
     
     for i in range(urlLength):
         print(urls[i])
-        capture_screenshot(urls[i], output_path=str(i), full_page=True)
+        capture_screenshot(urls[i], output_path=urls[i], full_page=True)
     
