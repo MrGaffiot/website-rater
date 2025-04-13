@@ -6,7 +6,9 @@ def makePackageInfo(size: int):
         categories = json.load(f)
     
     notDone = [i for i in categories if not i['isDone']]
+    print(notDone)
     package = [notDone[i] for i in range(size)]
+    print(package)
     
 #    for i in categories:
 #        for i in package:
