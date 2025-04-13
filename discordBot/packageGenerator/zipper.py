@@ -88,11 +88,11 @@ def main():
     try:
         # Example with default extraction directory
         print("Example 1: Using default directory")
-        unzip_file("discordBot\\packageGenerator\\package.zip")
+        unzip_file("discordBot/packageGenerator/package.zip")
         
         # Example with custom extraction directory
         print("\nExample 2: Using custom directory")
-        unzip_file("discordBot\\packageGenerator\\package.zip", "extracted_files")
+        unzip_file("discordBot/packageGenerator/package.zip", "extracted_files")
         
     except Exception as e:
         print(f"Error: {str(e)}")
