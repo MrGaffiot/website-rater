@@ -19,7 +19,7 @@ def makePackageInfo(size: int):
     return package
 
 def makePackage(package: list):
-    with open('discordBot/packageGenerator/packages/packageInfo.json', 'x', encoding='utf-8') as f:
+    with open('discordBot/packageGenerator/packages/packageInfo.json', 'w', encoding='utf-8') as f:
         json.dump(package, f, ensure_ascii=False, indent=4)
     
     for i in package:
