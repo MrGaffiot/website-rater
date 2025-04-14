@@ -16,7 +16,7 @@ class MyClient(discord.Client):
                 try:
                     generate.makePackage(generate.makePackageInfo(int(message.content.split(' ')[1])))
                     await message.channel.send(f"Package  with length {message.content.split(' ')[1]}generated")
-                    await message.channel.send(file=discord.File('discordBot\\packageGenerator\\package.zip'))
+                    await message.channel.send(file=discord.File('discordBot/packageGenerator/package.zip'))
                 except Exception as e:
                     await message.channel.send(str(e))
 
@@ -24,6 +24,6 @@ intents = discord.Intents.default()
 intents.message_content = True
 
 client = MyClient(intents=intents)
-with open("discordBot\\token", 'r') as f:
+with open("discordBot/token", 'r') as f:
     token = f.read()
 client.run(token)
