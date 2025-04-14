@@ -12,7 +12,11 @@ images = os.listdir('imageDownloader/webImages/')
 for image in images:
     if image == "imageGenerator.py":
         continue
-    cleanImage = image.split('screenshot_')[1].split('.')[0]
+    print(image)
+    try:
+        cleanImage = image.split('screenshot_')[1].split('.')[0]
+    except:
+        continue
     
     for url in urls:
         if 'www' in url:
