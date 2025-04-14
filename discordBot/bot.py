@@ -19,6 +19,8 @@ class MyClient(discord.Client):
                     await message.channel.send(file=discord.File('discordBot/packageGenerator/package.zip'))
                 except Exception as e:
                     await message.channel.send(str(e))
+            if message.content.startswith('!work'):
+                await message.channel.send(f"Yes master {message.author.name}!")
 
 intents = discord.Intents.default()
 intents.message_content = True
