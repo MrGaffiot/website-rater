@@ -10,10 +10,10 @@ def makePackageInfo(size: int):
     package = [notDone[i] for i in range(size)]
     print(package)
     
-    for i in categories:
-        for i in package:
-            if i['url'] == categories[categories.index(i)]['url']:
-                categories[categories.index(i)]["isDone"] = True
+#    for i in categories:
+#        for i in package:
+#            if i['url'] == categories[categories.index(i)]['url']:
+#                categories[categories.index(i)]["isDone"] = True
     
     with open('discordBot/packageGenerator/category.json', 'w', encoding='utf-8') as f:
         json.dump(categories, f, ensure_ascii=False, indent=4)

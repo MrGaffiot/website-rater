@@ -2,21 +2,21 @@
     {
         "url": "https://amtes.cz/",
         "isDone": true,
-        "imagePath": "imageDownloader\\webImages\\screenshot_amtes.png"
+        "imagePath": "imageDownloader/webImages/screenshot_amtes.png"
     },
     {
         "url": "https://auta-ferove.cz",
         "isDone": true,
-        "imagePath": "imageDownloader\\webImages\\screenshot_auta-ferove.png"
+        "imagePath": "imageDownloader/webImages/screenshot_auta-ferove.png"
     },
     {
         "url": "https://autoaws.cz",
         "isDone": true,
-        "imagePath": "imageDownloader\\webImages\\screenshot_autoaws.png"
+        "imagePath": "imageDownloader/webImages/screenshot_autoaws.png"
     },
     {
         "url": "https://autobalvin.hyundai.cz",
         "isDone": false,
-        "imagePath": "imageDownloader\\webImages\\screenshot_autobalvin.hyundai.png"
+        "imagePath": "imageDownloader/webImages/screenshot_autobalvin.hyundai.png"
     }
 ]

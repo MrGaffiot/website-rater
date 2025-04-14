@@ -15,7 +15,7 @@ class MyClient(discord.Client):
             if message.content.startswith('!generate'):
                 try:
                     generate.makePackage(generate.makePackageInfo(int(message.content.split(' ')[1])))
-                    await message.channel.send("Package generated")
+                    await message.channel.send(f"Package  with length {message.content.split(' ')[1]}generated")
                     await message.channel.send(file=discord.File('discordBot\\packageGenerator\\package.zip'))
                 except Exception as e:
                     await message.channel.send(str(e))
