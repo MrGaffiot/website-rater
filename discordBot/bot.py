@@ -13,14 +13,16 @@ bot = commands.Bot(command_prefix='!', intents=intents)
 async def generate(ctx, arg):
     try:
         generate.makePackage(generate.makePackageInfo(int(arg)))
+        await ctx.message.channel.send(f"Yes master {ctx.message.author.name}!")
         await ctx.message.channel.send(f"Package  with length {message.content.split(' ')[1]}generated")
         await ctx.message.channel.send(file=discord.File('discordBot/packageGenerator/package.zip'))
     except Exception as e:
         await ctx.message.channel.send(str(e))
 
 @bot.command()
-async def work(ctx):
+async def kys(ctx):
     await ctx.message.channel.send(f"Yes master {ctx.message.author.name}!")
+    quit()
     
 with open("discordBot/token", 'r') as f:
     token = f.read()
