@@ -11,6 +11,7 @@ def makePackageInfo(size: int):
     print(package)
     
     for i in package:
+        print(package[package.index(i)]["imagePath"].split("imageDownloader/webImages/")[1])
         package[package.index(i)]["imagePath"] = package[package.index(i)]["imagePath"].split("imageDownloader/webImages/")[1]
     
 #    for i in categories:
