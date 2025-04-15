@@ -12,7 +12,7 @@ def makePackageInfo(size: int):
     
     for i in package:
         print(package[package.index(i)]["imagePath"].split("imageDownloader/webImages/"))
-        package[package.index(i)]["imagePath"] = package[package.index(i)]["imagePath"].split("imageDownloader/webImages/")[1]
+        package[package.index(i)]["imagePath"] = package[package.index(i)]["imagePath"].split("imageDownloader/webImages/")[0]
     
 #    for i in categories:
 #        for i in package:
