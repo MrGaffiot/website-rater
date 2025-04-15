@@ -20,7 +20,7 @@ async def generate(ctx, arg):
 
 @bot.command()
 async def work(ctx):
-    await ctx.message.channel.send(f"Yes master {message.author.name}!")
+    await ctx.message.channel.send(f"Yes master {ctx.message.author.name}!")
     
 with open("discordBot/token", 'r') as f:
     token = f.read()
