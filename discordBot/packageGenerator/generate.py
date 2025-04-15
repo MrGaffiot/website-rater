@@ -31,8 +31,7 @@ def makePackage(package: list):
     print(f'package: {package}')
     
     for i in package:
-        name = i['imagePath'].split("imageDownloader/webImages/")[1]
-        shutil.copyfile(i['imagePath'], 'discordBot/packageGenerator/packages/' + name)
+        shutil.copyfile(i['imagePath'], 'discordBot/packageGenerator/packages/' + i['imagePath'])
 
     listDir = os.listdir('discordBot/packageGenerator/packages')
     print(listDir)
