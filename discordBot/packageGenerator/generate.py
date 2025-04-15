@@ -10,6 +10,9 @@ def makePackageInfo(size: int):
     package = [notDone[i] for i in range(size)]
     print(package)
     
+    for i in package:
+        package[package.index(i)]["imagePath"] = package[package.index(i)]["imagePath"].split("imageDownloader/webImages/")[1]
+    
 #    for i in categories:
 #        for i in package:
 #            if i['url'] == categories[categories.index(i)]['url']:
