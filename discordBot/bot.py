@@ -56,6 +56,14 @@ async def download(ctx):
 @bot.command()
 async def readDB(ctx):
     await ctx.message.channel.send(str(readInput.dbHanderl.readData()))
+
+@bot.command()
+async def removeWeb(ctx, arg):
+    try:
+        readInput.dbHanderl.removeUser(int(arg))
+        await ctx.message.channel.send("User removed")
+    except Exception as e:
+        await ctx.message.channel.send(str(e))
     
 with open("discordBot/token", 'r') as f:
     token = f.read()
