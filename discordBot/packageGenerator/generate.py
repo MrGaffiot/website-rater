@@ -14,10 +14,10 @@ def makePackageInfo(size: int):
         print(package[package.index(i)]["imagePath"].split("imageDownloader/webImages/"))
         package[package.index(i)]["imagePath"] = package[package.index(i)]["imagePath"].split("imageDownloader/webImages/")[0]
     
-#    for i in categories:
-#        for i in package:
-#            if i['url'] == categories[categories.index(i)]['url']:
-#                categories[categories.index(i)]["isDone"] = True
+    for i in categories:
+        for i in package:
+            if i['url'] == categories[categories.index(i)]['url']:
+                categories[categories.index(i)]["isDone"] = True
     
     with open('discordBot/packageGenerator/category.json', 'w', encoding='utf-8') as f:
         json.dump(categories, f, ensure_ascii=False, indent=4)
