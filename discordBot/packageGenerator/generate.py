@@ -27,6 +27,8 @@ def makePackage(package: list):
     with open('discordBot/packageGenerator/packages/packageInfo.json', 'w', encoding='utf-8') as f:
         json.dump(package, f, ensure_ascii=False, indent=4)
     
+    print(package)
+    
     for i in package:
         name = i['imagePath'].split("imageDownloader/webImages/")[1]
         shutil.copyfile(i['imagePath'], 'discordBot/packageGenerator/packages/' + name)
