@@ -1,6 +1,5 @@
 import discord
 from discord.ext import commands
-from dbHanderl import databaseHandler
 import packageGenerator.generate as generate
 from packageGenerator.zipper import unzip_file
 import packageHalnder.readInput as readInput
