@@ -35,13 +35,14 @@ def makePackage(package: list):
         shutil.copyfile(i['imagePath'], 'discordBot/packageGenerator/packages/' + name)
 
     listDir = os.listdir('discordBot/packageGenerator/packages')
+    print(listDir)
     files = []
     for i in listDir:
         files.append('discordBot/packageGenerator/packages/'+i)
         
     create_zip_archive(files, 'discordBot/packageGenerator/package.zip')
     
-    for i in os.listdir('discordBot/packageGenerator/packages'):
+    for i in listDir:
         if i != 'package.zip':
             os.remove(f'discordBot/packageGenerator/packages/{i}')
 
