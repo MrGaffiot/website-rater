@@ -55,7 +55,7 @@ async def download(ctx):
 
 @bot.command()
 async def readDB(ctx):
-    await ctx.message.channel.send(str(dbHanderl.readDB()))
+    await ctx.message.channel.send(str(readInput.dbHanderl.readData()))
     
 with open("discordBot/token", 'r') as f:
     token = f.read()
