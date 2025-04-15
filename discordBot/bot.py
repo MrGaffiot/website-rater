@@ -3,7 +3,7 @@ from discord.ext import commands
 from dbHanderl import databaseHandler
 import packageGenerator.generate as generate
 from packageGenerator.zipper import unzip_file
-
+import packageHalnder.readInput as readInput
 #await message.channel.send("User added")
 
 intents = discord.Intents.default()
@@ -47,7 +47,7 @@ async def download(ctx):
             
             # Download the file
             await attachment.save(filepath)
-            
+            readInput.writeInput()
             # Send confirmation
             await ctx.message.channel.send(f"Downloaded '{filename}' successfully!")
             
