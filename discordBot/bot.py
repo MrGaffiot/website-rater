@@ -2,6 +2,8 @@ import discord
 from discord.ext import commands
 from dbHanderl import databaseHandler
 import packageGenerator.generate as generate
+from packageGenerator.zipper import unzip_file
+
 #await message.channel.send("User added")
 
 intents = discord.Intents.default()
@@ -26,6 +28,31 @@ async def kys(ctx):
     else:
         await ctx.message.channel.send(f"Nah fuck you")
     quit()
+
+@bot.command()
+async def download(ctx):
+    # Check if message has attachments
+    if not ctx.message.attachments:
+        await ctx.message.channel.send("No attachments found in your message!")
+        return
+    
+    # Download each attachment
+    for attachment in ctx.message.attachments:
+        try:
+            # Get the filename from the attachment
+            filename = attachment.filename
+            
+            # Create full path for saving
+            filepath = f'discordBot/packageHalnder/{filename}'
+            
+            # Download the file
+            await attachment.save(filepath)
+            
+            # Send confirmation
+            await ctx.message.channel.send(f"Downloaded '{filename}' successfully!")
+            
+        except Exception as e:
+            await ctx.message.channel.send(f"Failed to download {filename}: {str(e)}")
     
 with open("discordBot/token", 'r') as f:
     token = f.read()
