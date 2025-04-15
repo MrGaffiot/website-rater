@@ -11,7 +11,7 @@ intents.message_content = True
 bot = commands.Bot(command_prefix='!', intents=intents)
 
 @bot.command()
-async def generate(ctx, arg):
+async def gen(ctx, arg):
     try:
         generate.makePackage(generate.makePackageInfo(int(arg)))
         await ctx.message.channel.send(f"Yes master {ctx.message.author.name}!")
