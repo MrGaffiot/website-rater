@@ -13,6 +13,7 @@ bot = commands.Bot(command_prefix='!', intents=intents)
 @bot.command()
 async def gen(ctx, arg):
     try:
+        print(int(arg))
         generate.makePackage(generate.makePackageInfo(int(arg)))
         await ctx.message.channel.send(f"Yes master {ctx.message.author.name}!")
         await ctx.message.channel.send(f"Package  with length {message.content.split(' ')[1]}generated")
