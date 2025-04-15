@@ -21,7 +21,10 @@ async def generate(ctx, arg):
 
 @bot.command()
 async def kys(ctx):
-    await ctx.message.channel.send(f"Yes master {ctx.message.author.name}!")
+    if ctx.message.author.name == "walper":
+        await ctx.message.channel.send(f"Yes master {ctx.message.author.name}!")
+    else:
+        await ctx.message.channel.send(f"Nah fuck you")
     quit()
     
 with open("discordBot/token", 'r') as f:
