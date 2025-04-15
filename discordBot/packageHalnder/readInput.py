@@ -1,5 +1,5 @@
 import json
-import dbHanderl
+import packageHalnder.dbHanderl as dbHanderl
 import os
 
 dbHanderl = dbHanderl.databaseHandler()
