@@ -53,6 +53,10 @@ async def download(ctx):
             
         except Exception as e:
             await ctx.message.channel.send(f"Failed to download {filename}: {str(e)}")
+
+@bot.command()
+async def readDB(ctx):
+    await ctx.message.channel.send(str(dbHanderl.readDB()))
     
 with open("discordBot/token", 'r') as f:
     token = f.read()
