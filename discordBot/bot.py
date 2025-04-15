@@ -16,7 +16,7 @@ async def gen(ctx, arg):
         print(int(arg))
         generate.makePackage(generate.makePackageInfo(int(arg)))
         await ctx.message.channel.send(f"Yes master {ctx.message.author.name}!")
-        await ctx.message.channel.send(f"Package  with length {message.content.split(' ')[1]}generated")
+        await ctx.message.channel.send(f"Package  with length {int(arg)} generated")
         await ctx.message.channel.send(file=discord.File('discordBot/packageGenerator/package.zip'))
     except Exception as e:
         await ctx.message.channel.send(str(e))
