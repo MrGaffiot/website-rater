@@ -64,6 +64,10 @@ async def removeWeb(ctx, arg):
         await ctx.message.channel.send("User removed")
     except Exception as e:
         await ctx.message.channel.send(str(e))
+
+@bot.command()
+async def help(ctx):
+    await ctx.message.channel.send("Commands:\n!generate <množství webovek> (pošle balíček na zčeknutí)\n!download <připojit sourbor co se má zkontrolovat> (zapíše výsledky)\n!readDB (přečte databázi)\n!removeWeb <id> (negramoti to nepotřebujou vědět)")
     
 with open("discordBot/token", 'r') as f:
     token = f.read()
