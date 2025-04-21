@@ -2,9 +2,15 @@ import os, json
 
 with open('imageDownloader/urls.json', 'r', encoding='utf-8') as f:
     urls = json.load(f)
-
-with open('discordBot/packageGenerator/category.json', 'r', encoding='utf-8') as f:
-    categories = json.load(f)
+try:
+    with open('discordBot/packageGenerator/category.json', 'r', encoding='utf-8') as f:
+        categories = json.load(f)
+except Exception as e:
+    if input("Error found {e}, do you want to continue? y/n").lower() == "y":
+        print(e)
+        categories = []
+    else:
+        quit()
 
 images = os.listdir('imageDownloader/webImages/')
 
